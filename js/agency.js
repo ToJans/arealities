@@ -158,7 +158,7 @@ $(function() {
                     "entry.1726596499": message
                 },
                 cache: false,
-                // due to CORS the response fails, but it does post the request
+                // HACK: google forms: due to CORS the response fails, but it does post the request
                 error: function() {
                     // Success message
                     $('#success').html("<div class='alert alert-success'>");
