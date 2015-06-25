@@ -149,16 +149,17 @@ $(function() {
                 firstName = name.split(' ').slice(0, -1).join(' ');
             }
             $.ajax({
-                url: "././mail/contact_me.php",
+                url: "https://docs.google.com/forms/d/1EvUn1TdIRLvrRQDXkAvFTmCSooemOP2espZu6Vh0m0I/formResponse",
                 type: "POST",
                 data: {
-                    name: name,
-                    phone: phone,
-                    email: email,
-                    message: message
+                    "entry.1750661056": name,
+                    "entry.988437689": phone,
+                    "entry.1462418853": email,
+                    "entry.1726596499": message
                 },
                 cache: false,
-                success: function() {
+                // due to CORS the response fails, but it does post the request
+                error: function() {
                     // Success message
                     $('#success').html("<div class='alert alert-success'>");
                     $('#success > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
@@ -170,17 +171,17 @@ $(function() {
 
                     //clear all fields
                     $('#contactForm').trigger("reset");
-                },
-                error: function() {
-                    // Fail message
-                    $('#success').html("<div class='alert alert-danger'>");
-                    $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
-                        .append("</button>");
-                    $('#success > .alert-danger').append("<strong>Sorry " + firstName + ", it seems that my mail server is not responding. Please try again later!");
-                    $('#success > .alert-danger').append('</div>');
-                    //clear all fields
-                    $('#contactForm').trigger("reset");
-                },
+                }
+                // error: function() {
+                //     // Fail message
+                //     $('#success').html("<div class='alert alert-danger'>");
+                //     $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
+                //         .append("</button>");
+                //     $('#success > .alert-danger').append("<strong>Sorry " + firstName + ", it seems that my mail server is not responding. Please try again later!");
+                //     $('#success > .alert-danger').append('</div>');
+                //     //clear all fields
+                //     $('#contactForm').trigger("reset");
+                // },
             })
         },
         filter: function() {
