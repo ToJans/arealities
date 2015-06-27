@@ -1116,6 +1116,7 @@ $('#name').focus(function() {
 
 // jQuery for page scrolling feature - requires jQuery Easing plugin
 $(function() {
+
     $('a.page-scroll').bind('click', function(event) {
         var $anchor = $(this);
         $('html, body').stop().animate({
@@ -1123,6 +1124,17 @@ $(function() {
         }, 1500, 'easeInOutExpo');
         event.preventDefault();
     });
+
+    var $iframe = $('iframe');
+    var maybeLoadIframe = function () {
+        if ($iframe.is(':visible') && ! $iframe.attr('src')) {
+            $iframe.attr('src',$iframe.attr('data-src'));
+        }
+    };
+
+    maybeLoadIframe();
+
+    $(window).resize(maybeLoadIframe);
 });
 
 // Highlight the top nav as scrolling occurs
