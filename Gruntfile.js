@@ -61,6 +61,14 @@ module.exports = function(grunt) {
                     dest: 'dist/'
                 }, ]
             },
+            favicons: {
+                files: [{
+                    expand: true,
+                    cwd: 'favicons',
+                    src: ['*.*'],
+                    dest: 'dist/',
+                }, ],
+            }
         },
         less: {
             expanded: {
