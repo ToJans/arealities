@@ -56,6 +56,16 @@ h6 {
 .bg-darkest-gray {
   background-color: #43547a;
 }
+.email-wrapper {
+  background-color: white;
+  padding: 100px 100px;
+}
+.email-wrapper > div {
+  padding: 20px 40px;
+}
+.email-wrapper button {
+  float: right;
+}
 .btn-primary {
   color: #ffffff;
   background-color: #fbd404;
@@ -551,59 +561,72 @@ section h3.section-subheading {
 aside.clients img {
   margin: 50px auto;
 }
-section#contact {
+section#contact,
+section#subscribe {
   background-color: #43547a;
   background-image: url('../img/map-image.png');
   background-position: center;
   background-repeat: no-repeat;
 }
-section#contact .section-heading {
+section#contact .section-heading,
+section#subscribe .section-heading {
   color: white;
 }
-section#contact .form-group {
+section#contact .form-group,
+section#subscribe .form-group {
   margin-bottom: 25px;
 }
 section#contact .form-group input,
-section#contact .form-group textarea {
+section#subscribe .form-group input,
+section#contact .form-group textarea,
+section#subscribe .form-group textarea {
   padding: 20px;
 }
-section#contact .form-group input.form-control {
+section#contact .form-group input.form-control,
+section#subscribe .form-group input.form-control {
   height: auto;
 }
-section#contact .form-group textarea.form-control {
+section#contact .form-group textarea.form-control,
+section#subscribe .form-group textarea.form-control {
   height: 236px;
 }
-section#contact .form-control:focus {
+section#contact .form-control:focus,
+section#subscribe .form-control:focus {
   border-color: #fbd404;
   box-shadow: none;
 }
-section#contact ::-webkit-input-placeholder {
+section#contact ::-webkit-input-placeholder,
+section#subscribe ::-webkit-input-placeholder {
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   font-weight: 700;
   color: #81a2ea;
 }
-section#contact :-moz-placeholder {
+section#contact :-moz-placeholder,
+section#subscribe :-moz-placeholder {
   /* Firefox 18- */
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   font-weight: 700;
   color: #81a2ea;
 }
-section#contact ::-moz-placeholder {
+section#contact ::-moz-placeholder,
+section#subscribe ::-moz-placeholder {
   /* Firefox 19+ */
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   font-weight: 700;
   color: #81a2ea;
 }
-section#contact :-ms-input-placeholder {
+section#contact :-ms-input-placeholder,
+section#subscribe :-ms-input-placeholder {
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   font-weight: 700;
   color: #81a2ea;
 }
-section#contact .text-danger {
+section#contact .text-danger,
+section#subscribe .text-danger {
   color: #fb8004;
 }
 footer {
