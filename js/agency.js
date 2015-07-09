@@ -139,13 +139,14 @@ $(function() {
         submitSuccess: function($form, event) {
             event.preventDefault(); // prevent default submit behaviour
             // get values from FORM
-            var name = $("input#name").val();
-            var email = $("input#email").val();
-            var phone = $("input#phone").val();
-            var message = $("textarea#message").val();
+            var name = $form.find('#name').val();
+            var email = $form.find("#email").val();
+            var phone = $form.find("#phone").val();
+            var message = $form.find("textarea#message").val();
+            var donemsg = $form.find("#donemsg").val() || "Your message has been sent.";
             var firstName = name; // For Success/Failure Message
             // Check for white space in name for Success/Fail message
-            if (firstName.indexOf(' ') >= 0) {
+            if (firstName && firstName.indexOf(' ') >= 0) {
                 firstName = name.split(' ').slice(0, -1).join(' ');
             }
             $.ajax({
@@ -161,13 +162,13 @@ $(function() {
                 // HACK: google forms: due to CORS the response fails, but it does post the request
                 error: function() {
                     // Success message
-                    $('#success').html("<div class='alert alert-success'>");
-                    $('#success > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
+                    var $success = $form.find('.success');
+                    $success.html("<div class='alert alert-success'>");
+                    var $successalert = $success.find('.alert-success');
+                    $successalert.html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
                         .append("</button>");
-                    $('#success > .alert-success')
-                        .append("<strong>Your message has been sent. </strong>");
-                    $('#success > .alert-success')
-                        .append('</div>');
+                    $successalert.append("<strong>"+donemsg+"</strong>");
+                    $successalert.append('</div>');
 
                     //clear all fields
                     $('#contactForm').trigger("reset");
