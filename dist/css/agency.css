@@ -305,15 +305,7 @@ section h3.section-subheading {
   text-transform: none;
 }
 #portfolio {
-  background-color: #43547a;
-  background-image: url('../img/header-bg-white.png');
-  background-repeat: none;
-  background-attachment: scroll;
-  background-position: center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  -o-background-size: cover;
+  background-color: #EEEEEE;
 }
 #portfolio .portfolio-item {
   margin: 0 0 15px;
